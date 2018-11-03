@@ -7,9 +7,15 @@
   box-shadow: 0px 0px 1px #888888;
 }
 
-/* .form_wrapper .input-container {
-  display: inline-flex;
-} */
+.password-field-wrapper {
+  display: flex;
+}
+
+body, html {
+    padding-top: 4%;
+    max-width: 600px;
+    margin: auto;
+}
 
 .header-section {
   color: teal;
@@ -24,14 +30,6 @@
   max-width: 600px;
   vertical-align: middle;
 }
-/* 
-main {
-  min-width: 320px;
-  max-width: 800px;
-  padding: 0px;
-  margin: 0 auto;
-  background: #fff;
-} */
 
 section {
   display: none;
@@ -71,7 +69,7 @@ label:before {
   margin-right: 10px;
 }
 
-label:hover {
+#tab-label2:hover, #tab-label1:hover {
   color: #000000;
   cursor: pointer;
 }
@@ -96,6 +94,14 @@ input:checked + #tab-label1, input:checked + #tab-label2 {
   margin-bottom: 10px;
 }
 
+#password-visible {
+  color: #008CBA;
+  padding: 5px 6px;
+  margin: 8px 0;
+  background-color: white;
+  cursor: pointer;
+}
+
 input[type=text], input[type=email], input[type=password] {
   display: block;
   width: 100%;
@@ -104,13 +110,13 @@ input[type=text], input[type=email], input[type=password] {
   box-sizing: border-box;
   border-radius: 3px;
   border: none;
-  border-bottom: 1px solid #008CBA;
   background-color: white;
   color: black;
 }
 
-input[type=text]:focus, input[type=password]:focus, input[type=email]:focus {
-    border: 0px solid #008CBA;
+input[type=text]:focus, input[type=password]:focus, input[type=email]:focus #password-visible:focus {
+    border: none;
+    border-bottom: 1px solid #008CBA;
 }
 
 input[type=submit] {

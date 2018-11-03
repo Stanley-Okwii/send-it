@@ -5,6 +5,7 @@
         <title>SendIT</title>
         <link rel="icon" href="assets/title.jpeg" type="image/x-icon">
         <link rel="stylesheet" href="src/styles/index.css" type="text/css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
         <script src="src/actions/index.js"></script>
     </head>
     <body>
@@ -12,10 +13,16 @@
         <h2 class="header-section">SendIT Courier Services</h2>
         <div class= "form_wrapper">
             <input id="tab1" type="radio" name="tabs" checked>
-            <label for="tab1" id="tab-label1">Sign in</label>
+            <label for="tab1" id="tab-label1">
+                <i class="fa fa-sign-in"></i>
+                Sign in
+            </label>
 
             <input id="tab2" type="radio" name="tabs">
-            <label for="tab2" id="tab-label2">Sign up</label>
+            <label for="tab2" id="tab-label2">
+                <i class="fa fa-sign-out"></i>
+                Sign up
+            </label>
 
             <section id="content1">
                 <form action="src/components/home_page.html">
@@ -25,8 +32,10 @@
                         </div>
                         <div class="input-container">
                             <label id="userPassword">Password</label>
+                            <div class="password-field-wrapper">
                             <input type="password" id="loginPassword" required/>
-                            <span id="passwordVisibility" style="color:#008CBA; padding: 5px 5px; margin: 8px 0 ;cursor: pointer;">Show</span>
+                            <span id="password-visible" onClick="showPassword()"><i class="fa fa-eye"></i></span>
+                            </div>
                         </div>
                         <input type="submit" value="Sign in" id="login" />
                 </form>

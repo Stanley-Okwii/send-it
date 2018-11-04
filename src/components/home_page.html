@@ -35,48 +35,56 @@
                     <div class="col col-6">Pickup location</div>
                     <div class="col col-7">Destination</div>
                     <div class="col col-8">Status</div>
-                    <div class="col col-9">Edit</div>
-                    <div class="col col-10">Cancel</div>
+                    <div class="col col-9"></div>
+                    <div class="col col-10"></div>
                 </li>
                 <li class="table-row">
                     <div class="col col-1" data-label="No">001</div>
                     <div class="col col-2" data-label="Parcel">Books</div>
                     <div class="col col-3" data-label="Weight">7</div>
                     <div class="col col-4" data-label="Price">85000</div>
-                    <div class="col col-5" data-label="Recipient">Stanley Okwii</div>
+                    <div class="col col-5" data-label="Recipient">Stanley</div>
                     <div class="col col-6" data-label="Pickuplocation">Mbale</div>
                     <div class="col col-7" data-label="Destination">Iganga</div>
                     <div class="col col-8" data-label="Status">Pending</div>
+                    <div class="col col-9" onClick="editDelivery(event)"><i class="fa fa-edit"></i></div>
+                    <div class="col col-10"><i class="fa fa-trash-o"></i></div>
                 </li>
                 <li class="table-row">
                     <div class="col col-1" data-label="No">002</div>
                     <div class="col col-2" data-label="Parcel">Fridge</div>
                     <div class="col col-3" data-label="Weight">60</div>
                     <div class="col col-4" data-label="Price">90770</div>
-                    <div class="col col-5" data-label="Recipient">Jennifer Smith</div>
+                    <div class="col col-5" data-label="Recipient">Jennifer</div>
                     <div class="col col-6" data-label="Pickuplocation">kampala</div>
                     <div class="col col-7" data-label="Destination">Iganga</div>
                     <div class="col col-8" data-label="Status">Pending</div>
+                    <div class="col col-9" onClick="editDelivery(event)"><i class="fa fa-edit"></i></div>
+                    <div class="col col-10"><i class="fa fa-trash-o"></i></div>
                 </li>
                 <li class="table-row">
                     <div class="col col-1" data-label="No">006</div>
                     <div class="col col-2" data-label="Parcel">Microwave</div>
                     <div class="col col-3" data-label="Weight">20</div>
                     <div class="col col-4" data-label="Price">70000</div>
-                    <div class="col col-5" data-label="Recipient">Daniel Ojakol</div>
+                    <div class="col col-5" data-label="Recipient">Daniel</div>
                     <div class="col col-6" data-label="Pickuplocation">kampala</div>
                     <div class="col col-7" data-label="Destination">Soroti</div>
                     <div class="col col-8" data-label="Status">Pending</div>
+                    <div class="col col-9" onClick="editDelivery(event)"><i class="fa fa-edit"></i></div>
+                    <div class="col col-10"><i class="fa fa-trash-o"></i></div>
                 </li>
                 <li class="table-row">
                     <div class="col col-1" data-label="No">093</div>
                     <div class="col col-2" data-label="Parcel">Fire wood</div>
                     <div class="col col-3" data-label="Weight">5</div>
                     <div class="col col-4" data-label="Price">23000</div>
-                    <div class="col col-5" data-label="Recipient">Mary Clare</div>
+                    <div class="col col-5" data-label="Recipient">Mary</div>
                     <div class="col col-6" data-label="Pickuplocation">Kansanga</div>
                     <div class="col col-7" data-label="Destination">Ntinda</div>
                     <div class="col col-8" data-label="Status">Pending</div>
+                    <div class="col col-9" onClick="editDelivery(event)"><i class="fa fa-edit"></i></div>
+                    <div class="col col-10"><i class="fa fa-trash-o"></i></div>
                 </li>
             </ul>
         </div>
@@ -112,7 +120,8 @@
                             <label class="input-label">Price</label>
                             <input type="number" id="price" readonly />
                         </div>
-                        <input type="submit" value="Submit" id="submit" />
+                        <input type="submit" value="Save" id="submit" />
+                        <input type="button" onClick="closeModal()" value="Cancel" id="Cancel" />
                     </form>
                 </section>
             </div>

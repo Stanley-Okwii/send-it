@@ -124,7 +124,7 @@ h2 {
     flex-basis: 10%;
   }
   .col-5 {
-    flex-basis: 15%;
+    flex-basis: 10%;
   }
   .col-6 {
     flex-basis: 15%;
@@ -133,8 +133,22 @@ h2 {
     flex-basis: 15%;
   }
   .col-8 {
-    flex-basis: 10%;
+    flex-basis: 5%;
   }
+  .col-9 {
+    flex-basis: 5%;
+    color: green;
+    text-align: center;
+  }
+  .col-10 {
+    flex-basis: 5%;
+    color: red;
+    text-align: center;
+  }
+  .col-9:hover, .col-10:hover {
+    cursor: pointer;
+  }
+
   
   @media all and (max-width: 767px) {
     .table-header {

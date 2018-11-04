@@ -33,13 +33,13 @@
             <section id="content1">
                 <form action="src/components/home_page.html">
                     <div class="input-container">
-                        <label id="userLabel">User name</label>
-                        <input type="text" id="loginUserName"/>
+                        <label id="userLabel">Username</label>
+                        <input type="text" placeholder="username" id="loginUserName"/>
                     </div>
                     <div class="input-container">
                         <label id="userPassword">Password</label>
                         <div class="password-field-wrapper">
-                            <input type="password" id="loginPassword"/>
+                            <input type="password" placeholder="password" id="loginPassword"/>
                             <span id="password-visible" onClick="showPassword()"><i class="fa fa-eye"></i></span>
                         </div>
                     </div>
@@ -49,8 +49,8 @@
             <section id="content2">
                 <form target="src/components/home_page.html">
                     <div class="input-container">
-                        <label id="userLabel1">User name</label>
-                        <input type="text" placeholder="user name" id="registerUserName" required />
+                        <label id="userLabel1">Username</label>
+                        <input type="text" placeholder="username" id="registerUserName" required />
                     </div>
                     <div class="input-container">
                         <label id="emailLabel">Email</label>
@@ -61,8 +61,8 @@
                         <input type="password" placeholder="Password" id="registerPassword1" required />
                     </div>
                     <div class="input-container">
-                        <label id="userPassword2">Password again</label>
-                        <input type="password" placeholder="Password" id="registerPassword2" required />
+                        <label id="userPassword2">Confirm password</label>
+                        <input type="password" placeholder="confirm password" id="registerPassword2" required />
                     </div>
                     <input type="submit" value="sign up" id="signup" />
                 </form>

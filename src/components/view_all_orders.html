@@ -132,30 +132,32 @@
                     <form onsubmit="closeModal()">
                         <div class="input-container">
                             <label class="input-label">Parcel item</label>
-                            <input type="text" id="item" placeholder="item to deliver e.g Book" />
+                            <input type="text" id="item" placeholder="Item to deliver e.g Book" />
                         </div>
                         <div class="input-container">
-                            <label class="input-label">Weight (Kilogram)</label>
-                            <input onChange="computePrice(event)" type="number" defaultValue="1" id="weight" />
+                            <label class="input-label">Weight (kg)</label>
+                            <input onChange="computePrice(event)" type="number" value="1" id="weight" />
+                        </div>
+                        <div class="input-container">
+                            <label class="input-label">Price (ugx)</label>
+                            <input type="number" placeholder="Estimate cost" id="price" readonly disabled />
                         </div>
                         <div class="input-container">
                             <label class="input-label">Recipient</label>
-                            <input type="text" id="recipient" />
+                            <input type="text" placeholder="Person to recieve the delivery" id="recipient" />
                         </div>
                         <div class="input-container">
                             <label class="input-label">Pickup location</label>
-                            <input type="text" id="pickuplocation" />
+                            <input type="text" placeholder="Pickup location" id="pickuplocation" />
                         </div>
                         <div class="input-container">
                             <label class="input-label">Destination</label>
-                            <input type="text" id="destination" />
+                            <input type="text" placeholder="Destination" id="destination" />
                         </div>
-                        <div class="input-container">
-                            <label class="input-label">Price</label>
-                            <input type="number" id="price" readonly />
+                        <div class="button-wrapper">
+                            <input type="submit" value="Save" id="submit" />
+                            <input type="button" onClick="closeModal()" value="Cancel" id="Cancel" />
                         </div>
-                        <input type="submit" value="Save" id="submit" />
-                        <input type="button" onClick="closeModal()" value="Cancel" id="Cancel" />
                     </form>
                 </section>
             </div>

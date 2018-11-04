@@ -41,9 +41,10 @@ editDelivery = (event) => {
     recipient.readOnly = true;
     let pickuplocation = document.getElementById("pickuplocation");
     pickuplocation.readOnly = true;
+    let status = document.getElementById("status");
     let currentlocation = document.getElementById("currentlocation");
-    currentlocation.readOnly = true;
     let destination = document.getElementById("destination");
+    destination.readOnly = true;
     let price = document.getElementById("price");
     price.readOnly = true;
     if(value){
@@ -54,7 +55,8 @@ editDelivery = (event) => {
         pickuplocation.value = value.children[5].innerText;
         destination.value = value.children[6].innerText;
         price.value = value.children[3].innerText;
-        currentlocation.value =  value.children[7].innerText;
+        currentlocation.value = value.children[7].innerText;
+        status.value = value.children[8].innerText;
         showModal();
     }
 }

@@ -55,3 +55,20 @@ editDelivery = (event) => {
         showModal();
     }
 }
+
+showDelivered = () => {
+    window.location.href = "../components/delivered_orders.html";
+}
+
+showAllOrders = () => {
+    window.location.href = "../components/view_all_orders.html";
+}
+
+showProfile = () => {
+    var profileCard = document.getElementsByClassName("side-panel")[0];
+    if(profileCard.style.display === "none"  || profileCard.style.display === ""){
+        profileCard.style.display = "block"
+    } else {
+        profileCard.style.display = "none"
+    }
+}

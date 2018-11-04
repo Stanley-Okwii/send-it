@@ -14,7 +14,7 @@
 <body>
     <nav class="navigation">
         <ul>
-            <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
+            <li><a href="home_page.html"><i class="fa fa-home"></i>Home</a></li>
             <li><a href="#" onClick="showProfile()"><i class="fa fa-user"></i>Profile</a></li>
             <li><a href="../../index.html"><i class="fa fa-sign-out"></i>Logout</a></li>
         </ul>
@@ -28,7 +28,7 @@
             </li>
             <ul class="deliveries">
                 <li class="table-header-extend">
-                    <span class="table-title">On going deliveries</span>
+                    <span class="table-title">All parcels</span>
                 </li>
                 <li class="table-header">
                     <div class="col col-1">No</div>
@@ -39,20 +39,16 @@
                     <div class="col col-6">Pickup location</div>
                     <div class="col col-7">Destination</div>
                     <div class="col col-8">Status</div>
-                    <div class="col col-9"></div>
-                    <div class="col col-10"></div>
                 </li>
                 <li class="table-row">
-                    <div class="col col-1" data-label="No">001</div>
-                    <div class="col col-2" data-label="Parcel">Books</div>
+                    <div class="col col-1" data-label="No">091</div>
+                    <div class="col col-2" data-label="Parcel">Ash tray</div>
                     <div class="col col-3" data-label="Weight">7</div>
-                    <div class="col col-4" data-label="Price">85000</div>
-                    <div class="col col-5" data-label="Recipient">Stanley</div>
-                    <div class="col col-6" data-label="Pickuplocation">Mbale</div>
-                    <div class="col col-7" data-label="Destination">Iganga</div>
-                    <div class="col col-8" data-label="Status">Pending</div>
-                    <div class="col col-9" onClick="editDelivery(event)"><i class="fa fa-edit"></i></div>
-                    <div class="col col-10"><i class="fa fa-trash-o"></i></div>
+                    <div class="col col-4" data-label="Price">8000</div>
+                    <div class="col col-5" data-label="Recipient">Timothy</div>
+                    <div class="col col-6" data-label="Pickuplocation">Tororo</div>
+                    <div class="col col-7" data-label="Destination">Kumi</div>
+                    <div class="col col-8" data-label="Status">Delivered</div>
                 </li>
                 <li class="table-row">
                     <div class="col col-1" data-label="No">002</div>
@@ -63,8 +59,46 @@
                     <div class="col col-6" data-label="Pickuplocation">kampala</div>
                     <div class="col col-7" data-label="Destination">Iganga</div>
                     <div class="col col-8" data-label="Status">Pending</div>
-                    <div class="col col-9" onClick="editDelivery(event)"><i class="fa fa-edit"></i></div>
-                    <div class="col col-10"><i class="fa fa-trash-o"></i></div>
+                </li>
+                <li class="table-row">
+                    <div class="col col-1" data-label="No">006</div>
+                    <div class="col col-2" data-label="Parcel">Microwave</div>
+                    <div class="col col-3" data-label="Weight">20</div>
+                    <div class="col col-4" data-label="Price">70000</div>
+                    <div class="col col-5" data-label="Recipient">Daniel</div>
+                    <div class="col col-6" data-label="Pickuplocation">kampala</div>
+                    <div class="col col-7" data-label="Destination">Soroti</div>
+                    <div class="col col-8" data-label="Status">Delivered</div>
+                </li>
+                <li class="table-row">
+                    <div class="col col-1" data-label="No">093</div>
+                    <div class="col col-2" data-label="Parcel">Pork ribs</div>
+                    <div class="col col-3" data-label="Weight">5</div>
+                    <div class="col col-4" data-label="Price">5770</div>
+                    <div class="col col-5" data-label="Recipient">Nicolette</div>
+                    <div class="col col-6" data-label="Pickuplocation">Kansanga</div>
+                    <div class="col col-7" data-label="Destination">Ntinda</div>
+                    <div class="col col-8" data-label="Status">Pending</div>
+                </li>
+                <li class="table-row">
+                    <div class="col col-1" data-label="No">091</div>
+                    <div class="col col-2" data-label="Parcel">Ash tray</div>
+                    <div class="col col-3" data-label="Weight">7</div>
+                    <div class="col col-4" data-label="Price">8000</div>
+                    <div class="col col-5" data-label="Recipient">Timothy</div>
+                    <div class="col col-6" data-label="Pickuplocation">Tororo</div>
+                    <div class="col col-7" data-label="Destination">Kumi</div>
+                    <div class="col col-8" data-label="Status">Pending</div>
+                </li>
+                <li class="table-row">
+                    <div class="col col-1" data-label="No">002</div>
+                    <div class="col col-2" data-label="Parcel">Fridge</div>
+                    <div class="col col-3" data-label="Weight">60</div>
+                    <div class="col col-4" data-label="Price">90770</div>
+                    <div class="col col-5" data-label="Recipient">Jennifer</div>
+                    <div class="col col-6" data-label="Pickuplocation">kampala</div>
+                    <div class="col col-7" data-label="Destination">Iganga</div>
+                    <div class="col col-8" data-label="Status">Delivered</div>
                 </li>
                 <li class="table-row">
                     <div class="col col-1" data-label="No">006</div>
@@ -75,20 +109,16 @@
                     <div class="col col-6" data-label="Pickuplocation">kampala</div>
                     <div class="col col-7" data-label="Destination">Soroti</div>
                     <div class="col col-8" data-label="Status">Pending</div>
-                    <div class="col col-9" onClick="editDelivery(event)"><i class="fa fa-edit"></i></div>
-                    <div class="col col-10"><i class="fa fa-trash-o"></i></div>
                 </li>
                 <li class="table-row">
                     <div class="col col-1" data-label="No">093</div>
-                    <div class="col col-2" data-label="Parcel">Fire wood</div>
+                    <div class="col col-2" data-label="Parcel">Pork ribs</div>
                     <div class="col col-3" data-label="Weight">5</div>
-                    <div class="col col-4" data-label="Price">23000</div>
-                    <div class="col col-5" data-label="Recipient">Mary</div>
+                    <div class="col col-4" data-label="Price">5770</div>
+                    <div class="col col-5" data-label="Recipient">Nicolette</div>
                     <div class="col col-6" data-label="Pickuplocation">Kansanga</div>
                     <div class="col col-7" data-label="Destination">Ntinda</div>
-                    <div class="col col-8" data-label="Status">Pending</div>
-                    <div class="col col-9" onClick="editDelivery(event)"><i class="fa fa-edit"></i></div>
-                    <div class="col col-10"><i class="fa fa-trash-o"></i></div>
+                    <div class="col col-8" data-label="Status">Delivered</div>
                 </li>
             </ul>
         </div>

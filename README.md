@@ -1,5 +1,6 @@
 # SendIT
 [![Maintainability](https://api.codeclimate.com/v1/badges/999c9750dca58e44fd87/maintainability)](https://codeclimate.com/github/Stanley-Okwii/send-it/maintainability)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/0b2a6f4eba1c48bb832f98a200aee58a)](https://www.codacy.com/app/Stanley-Okwii/send-it?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Stanley-Okwii/send-it&amp;utm_campaign=Badge_Grade)
 
 A courier service that helps users deliver parcels to different destinations
 

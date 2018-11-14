@@ -1,4 +1,6 @@
 # SendIT
+[![Maintainability](https://api.codeclimate.com/v1/badges/999c9750dca58e44fd87/maintainability)](https://codeclimate.com/github/Stanley-Okwii/send-it/maintainability)
+
 A courier service that helps users deliver parcels to different destinations
 
 ## Features

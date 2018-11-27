@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
         type="text/css">
     <script src="src/actions/index.js"></script>
+    <script src="src/actions/sign_up.js"></script>
+    <script src="src/actions/sign_in.js"></script>
 </head>
 
 <body>
@@ -31,23 +33,23 @@
             </label>
 
             <section id="content1">
-                <form action="src/components/home_page.html">
+                <form action="#">
                     <div class="input-container">
-                        <label id="userLabel">Username</label>
-                        <input type="text" placeholder="username" id="loginUserName"/>
+                        <label id="userLabel">Email</label>
+                        <input type="text" placeholder="example@sendit.com" id="user_email" required/>
                     </div>
                     <div class="input-container">
                         <label id="userPassword">Password</label>
                         <div class="password-field-wrapper">
-                            <input type="password" placeholder="password" id="loginPassword"/>
+                            <input type="password" placeholder="password" id="sign_in_password" required/>
                             <span id="password-visible" onClick="showPassword()"><i class="fa fa-eye"></i></span>
                         </div>
                     </div>
-                    <input type="submit" value="Sign in" id="login" />
+                    <input type="submit" value="Sign in" onClick="signIn()" id="login" />
                 </form>
             </section>
             <section id="content2">
-                <form target="src/components/home_page.html">
+                <form action="#">
                     <div class="input-container">
                         <label id="userLabel1">Username</label>
                         <input type="text" placeholder="username" id="registerUserName" required />
@@ -61,10 +63,10 @@
                         <input type="password" placeholder="Password" id="registerPassword1" required />
                     </div>
                     <div class="input-container">
-                        <label id="userPassword2">Confirm password</label>
+                        <label id="userPassword2">password again</label>
                         <input type="password" placeholder="confirm password" id="registerPassword2" required />
                     </div>
-                    <input type="submit" value="sign up" id="signup" />
+                    <input type="submit" value="sign up" onClick="registerUser()" id="signup" />
                 </form>
             </section>
         </div>

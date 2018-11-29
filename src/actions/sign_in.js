@@ -1,4 +1,5 @@
 signIn = () => {
+    event.preventDefault();
     const url = 'https://sender-app.herokuapp.com/api/v1/auth/signin';
 
     if (document.getElementById("sign_in_password")
@@ -25,8 +26,15 @@ signIn = () => {
                 message = data["data"]["message"]
                 console.log(message);
                 if (message === "You have logged in successfully.") {
-                    window.sessionStorage.setItem("user_token", data["data"]["user_token"]);
-                    window.location.href = "src/components/home_page.html"
+                    token = data["data"]["user_token"]
+                    window.sessionStorage.setItem("user_token", token);
+                    UserIdentity = JSON.parse(atob(token.split('.')[1]));
+                    role = UserIdentity['identity']['role']
+                    if (role === 'admin') {
+                        window.location.href = "src/components/admin_home.html"
+                    } else {
+                        window.location.href = "src/components/home_page.html"
+                    }
                 }
             })
             .catch(function (error) {

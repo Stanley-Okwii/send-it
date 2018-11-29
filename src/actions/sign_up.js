@@ -1,4 +1,5 @@
 registerUser = () => {
+    event.preventDefault();
     const url = 'https://sender-app.herokuapp.com/api/v1/user';
 
     if (document.getElementById("registerEmail")

@@ -33,7 +33,7 @@
             </label>
 
             <section id="content1">
-                <form action="#">
+                <form onSubmit="signIn();">
                     <div class="input-container">
                         <label id="userLabel">Email</label>
                         <input type="text" placeholder="example@sendit.com" id="user_email" required/>
@@ -45,11 +45,12 @@
                             <span id="password-visible" onClick="showPassword()"><i class="fa fa-eye"></i></span>
                         </div>
                     </div>
-                    <input type="submit" value="Sign in" onClick="signIn()" id="login" />
+                    <input type="submit" value="Sign in" id="login" />
+                    <div></div>
                 </form>
             </section>
             <section id="content2">
-                <form action="#">
+                <form onSubmit="registerUser();">
                     <div class="input-container">
                         <label id="userLabel1">Username</label>
                         <input type="text" placeholder="username" id="registerUserName" required />
@@ -63,10 +64,10 @@
                         <input type="password" placeholder="Password" id="registerPassword1" required />
                     </div>
                     <div class="input-container">
-                        <label id="userPassword2">password again</label>
+                        <label id="userPassword2">Password again</label>
                         <input type="password" placeholder="confirm password" id="registerPassword2" required />
                     </div>
-                    <input type="submit" value="sign up" onClick="registerUser()" id="signup" />
+                    <input type="submit" value="sign up" id="signup" />
                 </form>
             </section>
         </div>

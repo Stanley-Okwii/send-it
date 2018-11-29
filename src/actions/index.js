@@ -7,3 +7,19 @@ showPassword = () => {;
         passwordField.type = 'password';
       }
 }
+
+clearErrorMessage = (event) => {
+  const newValue = event.target.value;
+  if(newValue.length > 0){
+    errorHandle = document.getElementById("error_handle");
+    errorHandle.style.display = 'none';
+  }
+}
+
+clearSignUpErrorMessage = (event) => {
+  const newValue = event.target.value;
+  if(newValue.length > 0){
+    errorHandle = document.getElementById("error_handle_sign_up");
+    errorHandle.style.display = 'none';
+  }
+}

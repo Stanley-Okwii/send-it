@@ -23,18 +23,21 @@ signIn = () => {
         fetch(url, request)
             .then((response) => response.json())
             .then((data) => {
-                message = data["data"]["message"]
-                console.log(message);
+                message = data["message"];
                 if (message === "You have logged in successfully.") {
-                    token = data["data"]["user_token"]
+                    token = data["user_token"]
                     window.sessionStorage.setItem("user_token", token);
                     UserIdentity = JSON.parse(atob(token.split('.')[1]));
                     role = UserIdentity['identity']['role']
                     if (role === 'admin') {
-                        window.location.href = "src/components/admin_home.html"
+                        window.location.href = "src/components/admin_home.html";
                     } else {
-                        window.location.href = "src/components/home_page.html"
+                        window.location.href = "src/components/home_page.html";
                     }
+                } else {
+                    errorHandle = document.getElementById("error_handle");
+                    errorHandle.style.display = 'block';
+                    errorHandle.innerHTML = message;
                 }
             })
             .catch(function (error) {

@@ -36,17 +36,17 @@
                 <form onSubmit="signIn();">
                     <div class="input-container">
                         <label id="userLabel">Email</label>
-                        <input type="text" placeholder="example@sendit.com" id="user_email" required/>
+                        <input type="text" onkeydown="clearErrorMessage(event);" placeholder="example@sendit.com" id="user_email" required/>
                     </div>
                     <div class="input-container">
                         <label id="userPassword">Password</label>
                         <div class="password-field-wrapper">
-                            <input type="password" placeholder="password" id="sign_in_password" required/>
+                            <input type="password" onkeydown="clearErrorMessage(event);" placeholder="password" id="sign_in_password" required/>
                             <span id="password-visible" onClick="showPassword()"><i class="fa fa-eye"></i></span>
                         </div>
                     </div>
+                    <div id='error_handle'></div>
                     <input type="submit" value="Sign in" id="login" />
-                    <div></div>
                 </form>
             </section>
             <section id="content2">
@@ -67,6 +67,7 @@
                         <label id="userPassword2">Password again</label>
                         <input type="password" placeholder="confirm password" id="registerPassword2" required />
                     </div>
+                    <div id='error_handle_sign_up'></div>
                     <input type="submit" value="sign up" id="signup" />
                 </form>
             </section>

@@ -3,6 +3,7 @@ var span = document.getElementsByClassName("close")[0];
 
 showModal = () => {
     modal = document.getElementById('myModal');
+    document.getElementById("currentlocation").parentElement.style.display = 'none';
     modal.style.display = "block";
 }
 

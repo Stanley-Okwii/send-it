@@ -7,6 +7,7 @@
     <link rel="icon" href="../../assets/title.jpeg" type="image/x-icon">
     <link rel="stylesheet" href="../styles/home-page.css" type="text/css">
     <script src="../actions/home-page.js"></script>
+    <script src="../actions/create_delivery.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
         type="text/css">
 </head>
@@ -101,13 +102,13 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <span class="close" onClick="closeModal()">&times;</span>
-                    <h3>Create a delivery parcel </h3>
+                    <h3>Create a delivery parcel order </h3>
                 </div>
                 <section class="modal-body">
                     <form onsubmit="closeModal()">
                         <div class="input-container">
                             <label class="input-label">Parcel item</label>
-                            <input type="text" id="item" placeholder="Item to deliver e.g Book" />
+                            <input type="text" id="item" placeholder="Item to deliver e.g Book" required/>
                         </div>
                         <div class="input-container">
                             <label class="input-label">Weight (kg)</label>
@@ -123,18 +124,19 @@
                         </div>
                         <div class="input-container">
                             <label class="input-label">Pickup location</label>
-                            <input type="text" placeholder="Pickup location" id="pickuplocation" />
+                            <input type="text" placeholder="Pickup location" id="pickuplocation" required />
                         </div>
                         <div class="input-container">
                             <label class="input-label">Destination</label>
-                            <input type="text" placeholder="Destination" id="destination" />
+                            <input type="text" placeholder="Destination" id="destination" required/>
                         </div>
                         <div class="input-container">
                             <label class="input-label">Current location</label>
                             <input type="text" placeholder="Current location" id="currentlocation" />
                         </div>
+                        <div id="handle_order_error"></div>
                         <div class="button-wrapper">
-                            <input type="submit" value="Save" id="submit" />
+                            <input type="submit" value="Save" id="submit" onClick="create_order()"/>
                             <input type="button" onClick="closeModal()" value="Cancel" id="Cancel" />
                         </div>
                     </form>

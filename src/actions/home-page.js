@@ -99,6 +99,10 @@ showAllOrders = () => {
     window.location.href = "../components/view_all_orders.html";
 }
 
+showPending = () => {
+    window.location.href = "../components/home_page.html";
+}
+
 showProfile = () => {
     var profileCard = document.getElementsByClassName("side-panel")[0];
     if(profileCard.style.display === "none"  || profileCard.style.display === ""){

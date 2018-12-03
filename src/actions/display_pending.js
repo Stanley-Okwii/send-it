@@ -1,4 +1,4 @@
-show_orders = () => {
+showPendingOrders = () => {
     const url = 'https://sender-app.herokuapp.com/api/v1/parcels';
     var parentNode = document.getElementsByClassName("deliveries")[0];
     bearer = `Bearer ${sessionStorage.getItem('user_token')}`;
@@ -24,6 +24,7 @@ show_orders = () => {
 
 create_rows = (data) => {
     return data.
+    filter((order) => order.status === 'pending').
     map((order) => {
         var element = document.createElement('li');
         element.className = "table-row";

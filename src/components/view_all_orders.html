@@ -7,16 +7,16 @@
     <link rel="icon" href="../../assets/title.jpeg" type="image/x-icon">
     <link rel="stylesheet" href="../styles/home-page.css" type="text/css">
     <script src="../actions/home-page.js"></script>
+    <script src="../actions/display_orders.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
         type="text/css">
 </head>
 
-<body>
+<body onload="show_orders();">
     <nav class="navigation">
         <ul>
-            <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
+            <li><a href="src/components/home_page.html"><i class="fa fa-home"></i>Home</a></li>
             <li><a href="#" onClick="showProfile()"><i class="fa fa-user"></i>Profile</a></li>
-            <li><a href="admin_home.html" onClick="showAdminProfile()"><i class="fa fa-user-circle"></i>Admin</a></li>
             <li><a href="../../index.html"><i class="fa fa-sign-out"></i>Logout</a></li>
         </ul>
     </nav>
@@ -24,9 +24,11 @@
         <div class="deliveries-container">
             <li class="table-header-top">
                 <button id="create-delivery" onClick="showModal()"><i class="fa fa-plus"></i> &nbsp;Add delivery</button>
-                <button id="view-all" onClick="showAllOrders()">View all</button>
+                <button id="view-delivered" onClick="showPending()">View Pending</button>
                 <button id="view-delivered" onClick="showDelivered()">View Delivered</button>
+                <button id="view-all" onClick="showAllOrders()">View all</button>
             </li>
+            <div class="scroller">
             <ul class="deliveries">
                 <li class="table-header-extend">
                     <span class="table-title">All parcels</span>
@@ -41,98 +43,9 @@
                     <div class="col col-7">Destination</div>
                     <div class="col col-8">Current location</div>
                     <div class="col col-9">Status</div>
-                    <div class="col col-10"></div>
-                    <div class="col col-11"></div>
-                </li>
-                <li class="table-row">
-                    <div class="col col-1" data-label="No">091</div>
-                    <div class="col col-2" data-label="Parcel">Ash tray</div>
-                    <div class="col col-3" data-label="Weight">7</div>
-                    <div class="col col-4" data-label="Price">8000</div>
-                    <div class="col col-5" data-label="Recipient">Timothy</div>
-                    <div class="col col-6" data-label="Pickuplocation">Tororo</div>
-                    <div class="col col-7" data-label="Destination">Kumi</div>
-                    <div class="col col-8" data-label="currentlocation">Current location</div>
-                    <div class="col col-9" data-label="Status">Delivered</div>
-                </li>
-                <li class="table-row">
-                    <div class="col col-1" data-label="No">002</div>
-                    <div class="col col-2" data-label="Parcel">Fridge</div>
-                    <div class="col col-3" data-label="Weight">60</div>
-                    <div class="col col-4" data-label="Price">90770</div>
-                    <div class="col col-5" data-label="Recipient">Jennifer</div>
-                    <div class="col col-6" data-label="Pickuplocation">kampala</div>
-                    <div class="col col-7" data-label="Destination">Iganga</div>
-                    <div class="col col-8" data-label="currentlocation">Soroti</div>
-                    <div class="col col-9" data-label="Status">Pending</div>
-                </li>
-                <li class="table-row">
-                    <div class="col col-1" data-label="No">006</div>
-                    <div class="col col-2" data-label="Parcel">Microwave</div>
-                    <div class="col col-3" data-label="Weight">20</div>
-                    <div class="col col-4" data-label="Price">70000</div>
-                    <div class="col col-5" data-label="Recipient">Daniel</div>
-                    <div class="col col-6" data-label="Pickuplocation">kampala</div>
-                    <div class="col col-7" data-label="Destination">Soroti</div>
-                    <div class="col col-8" data-label="currentlocation">Mbale</div>
-                    <div class="col col-9" data-label="Status">Delivered</div>
-                </li>
-                <li class="table-row">
-                    <div class="col col-1" data-label="No">093</div>
-                    <div class="col col-2" data-label="Parcel">Pork ribs</div>
-                    <div class="col col-3" data-label="Weight">5</div>
-                    <div class="col col-4" data-label="Price">5770</div>
-                    <div class="col col-5" data-label="Recipient">Nicolette</div>
-                    <div class="col col-6" data-label="Pickuplocation">Kansanga</div>
-                    <div class="col col-7" data-label="Destination">Ntinda</div>
-                    <div class="col col-8" data-label="currentlocation">Town</div>
-                    <div class="col col-9" data-label="Status">Pending</div>
-                </li>
-                <li class="table-row">
-                    <div class="col col-1" data-label="No">091</div>
-                    <div class="col col-2" data-label="Parcel">Ash tray</div>
-                    <div class="col col-3" data-label="Weight">7</div>
-                    <div class="col col-4" data-label="Price">8000</div>
-                    <div class="col col-5" data-label="Recipient">Timothy</div>
-                    <div class="col col-6" data-label="Pickuplocation">Tororo</div>
-                    <div class="col col-7" data-label="Destination">Kumi</div>
-                    <div class="col col-8" data-label="currentlocation">Town</div>
-                    <div class="col col-9" data-label="Status">Pending</div>
-                </li>
-                <li class="table-row">
-                    <div class="col col-1" data-label="No">002</div>
-                    <div class="col col-2" data-label="Parcel">Fridge</div>
-                    <div class="col col-3" data-label="Weight">60</div>
-                    <div class="col col-4" data-label="Price">90770</div>
-                    <div class="col col-5" data-label="Recipient">Jennifer</div>
-                    <div class="col col-6" data-label="Pickuplocation">kampala</div>
-                    <div class="col col-7" data-label="Destination">Iganga</div>
-                    <div class="col col-8" data-label="currentlocation">Lira</div>
-                    <div class="col col-9" data-label="Status">Pending</div>
-                </li>
-                <li class="table-row">
-                    <div class="col col-1" data-label="No">006</div>
-                    <div class="col col-2" data-label="Parcel">Microwave</div>
-                    <div class="col col-3" data-label="Weight">20</div>
-                    <div class="col col-4" data-label="Price">70000</div>
-                    <div class="col col-5" data-label="Recipient">Daniel</div>
-                    <div class="col col-6" data-label="Pickuplocation">kampala</div>
-                    <div class="col col-7" data-label="Destination">Soroti</div>
-                    <div class="col col-8" data-label="currentlocation">Kumi</div>
-                    <div class="col col-9" data-label="Status">Delivered</div>
-                </li>
-                <li class="table-row">
-                    <div class="col col-1" data-label="No">093</div>
-                    <div class="col col-2" data-label="Parcel">Pork ribs</div>
-                    <div class="col col-3" data-label="Weight">5</div>
-                    <div class="col col-4" data-label="Price">5770</div>
-                    <div class="col col-5" data-label="Recipient">Nicolette</div>
-                    <div class="col col-6" data-label="Pickuplocation">Kansanga</div>
-                    <div class="col col-7" data-label="Destination">Ntinda</div>
-                    <div class="col col-8" data-label="currentlocation">Kireka</div>
-                    <div class="col col-9" data-label="Status">Pending</div>
                 </li>
             </ul>
+            <div>
         </div>
         <div id="myModal" class="modal">
             <div class="modal-content">

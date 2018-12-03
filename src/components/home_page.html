@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="../styles/home-page.css" type="text/css">
     <script src="../actions/home-page.js"></script>
     <script src="../actions/create_delivery.js"></script>
-    <script src="../actions/display_orders.js"></script>
+    <script src="../actions/display_pending.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
         type="text/css">
 </head>
 
-<body onload="show_orders();">
+<body onload="showPendingOrders();">
     <nav class="navigation">
         <ul>
             <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
@@ -25,8 +25,9 @@
         <div class="deliveries-container">
             <li class="table-header-top">
                 <button id="create-delivery" onClick="showModal()"><i class="fa fa-plus"></i> &nbsp;Add delivery</button>
-                <button id="view-all" onClick="showAllOrders()">View all</button>
+                <button id="view-delivered" onClick="showPending()">View Pending</button>
                 <button id="view-delivered" onClick="showDelivered()">View Delivered</button>
+                <button id="view-all" onClick="showAllOrders()">View all</button>
             </li>
             <div class="scroller">
                 <ul class="deliveries">

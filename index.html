@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SendIT</title>
+    <link rel="icon" href="assets/title.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="src/styles/index.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        type="text/css">
+    <script src="src/actions/index.js"></script>
+</head>
+
+<body>
+    <div class="index-container">
+        <h2 class="header-section">
+            SendIT Courier Services
+            <img class="send-it-image" src="assets/baby.png">
+        </h2>
+        <div class="form_wrapper">
+            <input id="tab1" type="radio" name="tabs" checked>
+            <label for="tab1" id="tab-label1">
+                <i class="fa fa-sign-in"></i>
+                Sign in
+            </label>
+
+            <input id="tab2" type="radio" name="tabs">
+            <label for="tab2" id="tab-label2">
+                <i class="fa fa-user-plus"></i>
+                Sign up
+            </label>
+
+            <section id="content1">
+                <form action="src/components/home_page.html">
+                    <div class="input-container">
+                        <label id="userLabel">Username</label>
+                        <input type="text" placeholder="username" id="loginUserName"/>
+                    </div>
+                    <div class="input-container">
+                        <label id="userPassword">Password</label>
+                        <div class="password-field-wrapper">
+                            <input type="password" placeholder="password" id="loginPassword"/>
+                            <span id="password-visible" onClick="showPassword()"><i class="fa fa-eye"></i></span>
+                        </div>
+                    </div>
+                    <input type="submit" value="Sign in" id="login" />
+                </form>
+            </section>
+            <section id="content2">
+                <form target="src/components/home_page.html">
+                    <div class="input-container">
+                        <label id="userLabel1">Username</label>
+                        <input type="text" placeholder="username" id="registerUserName" required />
+                    </div>
+                    <div class="input-container">
+                        <label id="emailLabel">Email</label>
+                        <input type="email" placeholder="johndoe@gmail.com" id="registerEmail" required />
+                    </div>
+                    <div class="input-container">
+                        <label id="userPassword1">Password</label>
+                        <input type="password" placeholder="Password" id="registerPassword1" required />
+                    </div>
+                    <div class="input-container">
+                        <label id="userPassword2">Confirm password</label>
+                        <input type="password" placeholder="confirm password" id="registerPassword2" required />
+                    </div>
+                    <input type="submit" value="sign up" id="signup" />
+                </form>
+            </section>
+        </div>
+    </div>
+</body>
+
+</html>

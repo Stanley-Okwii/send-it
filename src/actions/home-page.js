@@ -119,9 +119,12 @@ showPending = () => {
 
 showProfile = () => {
     var profileCard = document.getElementsByClassName("side-panel")[0];
-    if(profileCard.style.display === "none"  || profileCard.style.display === ""){
-        profileCard.style.display = "block"
+    var bodyWrapper = document.getElementsByClassName("home-container")[0];
+    if(profileCard.style.display === "none" || profileCard.style.display === ""){
+        profileCard.style.display = "block";
+        bodyWrapper.style.marginLeft = "0px";
     } else {
-        profileCard.style.display = "none"
+        profileCard.style.display = "none";
+        bodyWrapper.style.marginLeft = "200px";
     }
 }

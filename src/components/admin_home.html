@@ -7,15 +7,19 @@
     <link rel="icon" href="../../assets/title.jpeg" type="image/x-icon">
     <link rel="stylesheet" href="../styles/home-page.css" type="text/css">
     <script src="../actions/home-page.js"></script>
+    <script src="../actions/admin_home.js"></script>
+    <script src="../actions/user/create_delivery.js"></script>
+    <script src="../actions/user/display_pending.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
         type="text/css">
 </head>
 
-<body>
+<body onload="showPendingOrders()">
     <nav class="navigation">
         <ul>
             <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
             <li><a href="#" onClick="showProfile()"><i class="fa fa-user"></i>Profile</a></li>
+            <li><a href="#" onClick="showUsers"><i class="fa fa-users"></i>Users</a></li>
             <li><a href="../../index.html"><i class="fa fa-sign-out"></i>Logout</a></li>
         </ul>
     </nav>
@@ -34,10 +38,12 @@
     <div class="home-container">
         <div class="deliveries-container">
             <li class="table-header-top">
-                <button id="create-delivery" onClick=""><i class="fa fa-plus"></i> &nbsp;Add delivery</button>
-                <button id="view-all" onClick="">View all</button>
-                <button id="view-delivered" onClick="">View Delivered</button>
+                <button id="create-delivery" onClick="showModal()"><i class="fa fa-plus"></i> &nbsp;Add delivery</button>
+                <button id="view-pending" onClick="navigateToPendingOrders()">View Pending</button>
+                <button id="view-delivered" onClick="navigateToDeliveredOrders()">View Delivered</button>
+                <button id="view-all" onClick="navigateToAllOrders()">View all</button>
             </li>
+            <div class="scroller">
             <ul class="deliveries">
                 <li class="table-header-extend">
                     <span class="table-title">On going deliveries</span>
@@ -55,69 +61,22 @@
                     <div class="col col-10"></div>
                     <div class="col col-11"></div>
                 </li>
-                <li class="table-row">
-                    <div class="col col-1" data-label="No">001</div>
-                    <div class="col col-2" data-label="Parcel">Books</div>
-                    <div class="col col-3" data-label="Weight">7</div>
-                    <div class="col col-4" data-label="Price">85000</div>
-                    <div class="col col-5" data-label="Recipient">Stanley</div>
-                    <div class="col col-6" data-label="Pickuplocation">Mbale</div>
-                    <div class="col col-7" data-label="Destination">Iganga</div>
-                    <div class="col col-8" data-label="Currenlocation">Bududa</div>
-                    <div class="col col-9" data-label="Status">Pending</div>
-                    <div class="col col-10" onClick="editDeliveryAdmin(event)"><i class="fa fa-edit"></i></div>
-                    <div class="col col-11"><i class="fa fa-trash-o"></i></div>
-                </li>
-                <li class="table-row">
-                    <div class="col col-1" data-label="No">002</div>
-                    <div class="col col-2" data-label="Parcel">Fridge</div>
-                    <div class="col col-3" data-label="Weight">60</div>
-                    <div class="col col-4" data-label="Price">90770</div>
-                    <div class="col col-5" data-label="Recipient">Jennifer</div>
-                    <div class="col col-6" data-label="Pickuplocation">kampala</div>
-                    <div class="col col-7" data-label="Destination">Iganga</div>
-                    <div class="col col-8" data-label="Currenlocation">Jinja</div>
-                    <div class="col col-9" data-label="Status">Pending</div>
-                    <div class="col col-10" onClick="editDeliveryAdmin(event)"><i class="fa fa-edit"></i></div>
-                    <div class="col col-11"><i class="fa fa-trash-o"></i></div>
-                </li>
-                <li class="table-row">
-                    <div class="col col-1" data-label="No">006</div>
-                    <div class="col col-2" data-label="Parcel">Microwave</div>
-                    <div class="col col-3" data-label="Weight">20</div>
-                    <div class="col col-4" data-label="Price">70000</div>
-                    <div class="col col-5" data-label="Recipient">Daniel</div>
-                    <div class="col col-6" data-label="Pickuplocation">kampala</div>
-                    <div class="col col-7" data-label="Destination">Soroti</div>
-                    <div class="col col-8" data-label="Currenlocation">Mbale</div>
-                    <div class="col col-9" data-label="Status">Pending</div>
-                    <div class="col col-10" onClick="editDeliveryAdmin(event)"><i class="fa fa-edit"></i></div>
-                    <div class="col col-11"><i class="fa fa-trash-o"></i></div>
-                </li>
-                <li class="table-row">
-                    <div class="col col-1" data-label="No">093</div>
-                    <div class="col col-2" data-label="Parcel">Fire wood</div>
-                    <div class="col col-3" data-label="Weight">5</div>
-                    <div class="col col-4" data-label="Price">23000</div>
-                    <div class="col col-5" data-label="Recipient">Mary</div>
-                    <div class="col col-6" data-label="Pickuplocation">Kansanga</div>
-                    <div class="col col-7" data-label="Destination">Ntinda</div>
-                    <div class="col col-8" data-label="Currenlocation">Mbale</div>
-                    <div class="col col-9" data-label="Status">Pending</div>
-                    <div class="col col-10" onClick="editDeliveryAdmin(event)"><i class="fa fa-edit"></i></div>
-                    <div class="col col-11"><i class="fa fa-trash-o"></i></div>
-                </li>
             </ul>
+        </div>
         </div>
         </div>
         <div id="myModal" class="modal">
             <div class="modal-content">
                 <div class="modal-header">
                     <span class="close" onClick="closeModal()">&times;</span>
-                    <h3>Create a delivery parcel </h3>
+                    <h3>Create a delivery parcel order </h3>
                 </div>
                 <section class="modal-body">
                     <form onsubmit="closeModal()">
+                        <div class="input-container">
+                            <label class="input-label">Parcel Number</label>
+                            <input type="text" id="orderId" disabled readonly/>
+                        </div>
                         <div class="input-container">
                             <label class="input-label">Parcel item</label>
                             <input type="text" id="item" placeholder="Item to deliver e.g Book" />
@@ -151,7 +110,7 @@
                             <input type="text" placeholder="Status" id="status" />
                         </div>
                         <div class="button-wrapper">
-                            <input type="submit" value="Save" id="submit" />
+                            <input type="submit" value="Save" onClick="create_order()" id="submit" />
                             <input type="button" onClick="closeModal()" value="Cancel" id="Cancel" />
                         </div>
                     </form>

@@ -309,6 +309,11 @@ input[type=button] {
   overflow-y: scroll;
   height: 450px;
 }
+
 .body-wrapper{
   display: -webkit-flex;
+}
+
+.col.col-11 > i {
+  color: blue;
 }

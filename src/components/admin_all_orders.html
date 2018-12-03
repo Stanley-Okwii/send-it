@@ -8,16 +8,18 @@
     <link rel="stylesheet" href="../styles/home-page.css" type="text/css">
     <script src="../actions/home-page.js"></script>
     <script src="../actions/user/create_delivery.js"></script>
-    <script src="../actions/user/display_delivered.js"></script>
+    <script src="../actions/admin_home.js"></script>
+    <script src="../actions/user/display_orders.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
         type="text/css">
 </head>
 
-<body onload="showDeliveredOrders();">
+<body onload="show_orders()">
     <nav class="navigation">
         <ul>
-            <li><a href="src/components/home_page.html"><i class="fa fa-home"></i>Home</a></li>
+            <li><a href="admin_home.html"><i class="fa fa-home"></i>Home</a></li>
             <li><a href="#" onClick="showProfile()"><i class="fa fa-user"></i>Profile</a></li>
+            <li><a href="#" onClick="showUsers"><i class="fa fa-users"></i>Users</a></li>
             <li><a href="../../index.html"><i class="fa fa-sign-out"></i>Logout</a></li>
         </ul>
     </nav>
@@ -26,7 +28,7 @@
         <div class="card">
             <img src="../../assets/avatar.png" alt="Avatar" style="width: 70%">
             <div class="container">
-                <h4><b>Stanley Okwii</b></h4>
+                <h4><b>Admin here</b></h4>
                 <div>Delivered orders: 8</div>
                 <br />
                 <div>Pending orders: 3 </div>
@@ -37,14 +39,14 @@
         <div class="deliveries-container">
             <li class="table-header-top">
                 <button id="create-delivery" onClick="showModal()"><i class="fa fa-plus"></i> &nbsp;Add delivery</button>
-                <button id="view-pending" onClick="showPending()">View Pending</button>
-                <button id="view-delivered" onClick="showDelivered()">View Delivered</button>
-                <button id="view-all" onClick="showAllOrders()">View all</button>
+                <button id="view-delivered" onClick="navigateToPendingOrders()">View Pending</button>
+                <button id="view-delivered" onClick="navigateToDeliveredOrders()">View Delivered</button>
+                <button id="view-all" onClick="navigateToAllOrders()">View all</button>
             </li>
             <div class="scroller">
             <ul class="deliveries">
                 <li class="table-header-extend">
-                    <span class="table-title">Delivered parcels</span>
+                    <span class="table-title">All parcel orders</span>
                 </li>
                 <li class="table-header">
                     <div class="col col-1">No</div>
@@ -58,17 +60,21 @@
                     <div class="col col-9">Status</div>
                 </li>
             </ul>
-            <div>
             </div>
+        </div>
         </div>
         <div id="myModal" class="modal">
             <div class="modal-content">
                 <div class="modal-header">
                     <span class="close" onClick="closeModal()">&times;</span>
-                    <h3>Create a delivery parcel </h3>
+                    <h3>Create a delivery parcel order </h3>
                 </div>
                 <section class="modal-body">
                     <form onsubmit="closeModal()">
+                        <div class="input-container">
+                            <label class="input-label">Parcel Number</label>
+                            <input type="text" id="orderId" disabled readonly/>
+                        </div>
                         <div class="input-container">
                             <label class="input-label">Parcel item</label>
                             <input type="text" id="item" placeholder="Item to deliver e.g Book" />
@@ -97,8 +103,12 @@
                             <label class="input-label">Current location</label>
                             <input type="text" placeholder="Current location" id="currentlocation" />
                         </div>
+                        <div class="input-container">
+                            <label class="input-label">Status</label>
+                            <input type="text" placeholder="Status" id="status" />
+                        </div>
                         <div class="button-wrapper">
-                            <input type="submit" value="Save" id="submit" />
+                            <input type="submit" value="Save" onClick="create_order()" id="submit" />
                             <input type="button" onClick="closeModal()" value="Cancel" id="Cancel" />
                         </div>
                     </form>

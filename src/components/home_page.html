@@ -9,6 +9,8 @@
     <script src="../actions/home-page.js"></script>
     <script src="../actions/create_delivery.js"></script>
     <script src="../actions/display_pending.js"></script>
+    <script src="../actions/cancel_order.js"></script>
+    <script src="../actions/change_destination.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
         type="text/css">
 </head>
@@ -58,6 +60,10 @@
                 </div>
                 <section class="modal-body">
                     <form onsubmit="closeModal()">
+                        <div class="input-container">
+                            <label class="input-label">Parcel Number</label>
+                            <input type="text" id="orderId" disabled readonly/>
+                        </div>
                         <div class="input-container">
                             <label class="input-label">Parcel item</label>
                             <input type="text" id="item" placeholder="Item to deliver e.g Book" required/>

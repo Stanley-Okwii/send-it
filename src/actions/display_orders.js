@@ -72,15 +72,6 @@ create_rows = (data) => {
         status.setAttribute('class', 'col col-9');
         status.setAttribute('data-label', 'Status');
 
-        var edit = document.createElement('div');
-        edit.innerHTML = "<i class='fa fa-edit'></i>";
-        edit.setAttribute('class', 'col col-10');
-        edit.setAttribute('onClick', 'editDelivery(event)');
-
-        var cancel = document.createElement('div');
-        cancel.innerHTML = "<i class='fa fa-times-circle-o'></i>";
-        cancel.setAttribute('class', 'col col-11');
-
         element.appendChild(no);
         element.appendChild(parcel);
         element.appendChild(weight);
@@ -90,8 +81,6 @@ create_rows = (data) => {
         element.appendChild(destination);
         element.appendChild(current_location);
         element.appendChild(status);
-        element.appendChild(edit);
-        element.appendChild(cancel);
 
         return element;
     }

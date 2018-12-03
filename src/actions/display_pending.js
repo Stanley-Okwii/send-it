@@ -80,6 +80,7 @@ create_rows = (data) => {
 
         var cancel = document.createElement('div');
         cancel.innerHTML = "<i class='fa fa-times-circle-o'></i>";
+        cancel.setAttribute('onClick', 'cancelOrder(event)');
         cancel.setAttribute('class', 'col col-11');
 
         element.appendChild(no);

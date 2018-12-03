@@ -3,7 +3,12 @@ var span = document.getElementsByClassName("close")[0];
 
 showModal = () => {
     modal = document.getElementById('myModal');
+    document.getElementById("submit").setAttribute("onClick","create_order()");
     document.getElementById("currentlocation").parentElement.style.display = 'none';
+    document.getElementById("orderId").parentElement.style.display = 'none';
+    // document.getElementById("recipient").parentElement.style.display = 'block';
+    // document.getElementById("weight").parentElement.style.display = 'block';
+    // document.getElementById("price").parentElement.style.display = 'block';
     modal.style.display = "block";
 }
 
@@ -34,21 +39,27 @@ computePrice = (event) => {
 editDelivery = (event) => {
     const value = event.currentTarget.parentNode;
     const modalHeader = document.getElementsByClassName("modal-header")[0].lastElementChild;
+    const orderNode = document.getElementById("orderId");
     let parcel = document.getElementById("item");
     parcel.readOnly = true;
+    parcel.setAttribute('disabled','disabled');
     let weight = document.getElementById("weight");
-    weight.readOnly = true;
+    weight.parentElement.style.display= 'none';
     let recipient = document.getElementById("recipient");
-    recipient.readOnly = true;
+    recipient.parentElement.style.display = 'none';
     let pickuplocation = document.getElementById("pickuplocation");
     pickuplocation.readOnly = true;
+    pickuplocation.setAttribute('disabled','disabled');
     let currentlocation = document.getElementById("currentlocation");
     currentlocation.readOnly = true;
+    currentlocation.setAttribute('disabled','disabled');
     let destination = document.getElementById("destination");
     let price = document.getElementById("price");
+    price.parentElement.style.display = 'none';
     price.readOnly = true;
     if(value){
-        modalHeader.innerText = "Edit parcel";
+        modalHeader.innerText = "Change destination";
+        orderNode.value = value.children[0].innerText;
         parcel.value = value.children[1].innerText;
         weight.value = value.children[2].innerText;
         recipient.value = value.children[4].innerText;
@@ -57,6 +68,9 @@ editDelivery = (event) => {
         price.value = value.children[3].innerText;
         currentlocation.value =  value.children[7].innerText;
         showModal();
+        orderNode.parentElement.style.display = 'block';
+        document.getElementById("submit").setAttribute("onClick","changeDestination()");
+        destination.focus();
     }
 }
 

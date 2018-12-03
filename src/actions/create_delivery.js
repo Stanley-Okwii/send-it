@@ -1,14 +1,3 @@
-closeModal = () => {
-    var modal = document.getElementById('myModal');
-    var span = document.getElementsByClassName("close")[0];
-    document.getElementById("item").readOnly = false;
-    document.getElementById("weight").readOnly = false;
-    document.getElementById("recipient").readOnly = false;
-    document.getElementById("pickuplocation").readOnly = false;
-    document.getElementsByClassName("modal-body")[0].firstElementChild.reset()
-    modal.style.display = "none";
-}
-
 create_order = () => {
     event.preventDefault();
     const url = 'https://sender-app.herokuapp.com/api/v1/parcels';
@@ -51,7 +40,8 @@ create_order = () => {
                 message = data["message"];
                 if (message === "parcel delivery order successfully created") {
                     console.log(message);
-                    closeModal();
+                    document.getElementById('myModal').style.display = "none";
+                    document.getElementsByClassName("modal-body")[0].firstElementChild.reset();
                 } else {
                     errorHandle.innerHTML = message;
                 }

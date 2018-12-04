@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SendIT</title>
+    <link rel="icon" href="../../assets/title.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/home-page.css" type="text/css">
+    <link rel="stylesheet" href="../styles/responsive_table.css" type="text/css">
+    <script src="../actions/home-page.js"></script>
+    <script src="../actions/admin_home.js"></script>
+    <script src="../actions/admin/display_users.js"></script>
+    <script src="../actions/admin/delete_user.js"></script>>
+    <script src="../actions/admin/change_role.js"></script>>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        type="text/css">
+</head>
+
+<body onload="showUsers()">
+    <nav class="navigation">
+        <ul>
+            <li><a href="admin_home.html"><i class="fa fa-home"></i>Home</a></li>
+            <li><a href="#" onClick="showProfile()"><i class="fa fa-user"></i>Profile</a></li>
+            <li><a href="#" onClick="showUsers"><i class="fa fa-users"></i>Users</a></li>
+            <li><a href="../../index.html"><i class="fa fa-sign-out"></i>Logout</a></li>
+        </ul>
+    </nav>
+    <div class="body-wrapper">
+    <aside class="side-panel">
+        <div class="card">
+            <img src="../../assets/avatar.png" alt="Avatar" style="width: 70%">
+            <div class="container">
+                <h4><b>Admin here</b></h4>
+                <div>Delivered orders: 8</div>
+                <br />
+                <div>Pending orders: 3 </div>
+            </div>
+        </div>
+    </aside>
+    <div class="home-container">
+        <div class="deliveries-container">
+                <ul class="deliveries">
+                <li class="table-header-extend">
+                    <span class="table-title">Users</span>
+                </li>
+            </ul>
+            <div class="scroller">
+                <div class="Table">
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+</body>
+
+</html>

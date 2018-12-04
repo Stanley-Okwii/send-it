@@ -8,9 +8,10 @@
     <link rel="stylesheet" href="../styles/home-page.css" type="text/css">
     <script src="../actions/home-page.js"></script>
     <script src="../actions/admin_home.js"></script>
-    <script src="../actions/user/create_delivery.js"></script>
     <script src="../actions/user/display_pending.js"></script>
+    <script src="../actions/user/create_delivery.js"></script>
     <script src="../actions/admin/markAsDelivered.js"></script>
+    <script src="../actions/admin/change_current_location.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
         type="text/css">
 </head>
@@ -105,10 +106,6 @@
                         <div class="input-container">
                             <label class="input-label">Current location</label>
                             <input type="text" placeholder="Current location" id="currentlocation" />
-                        </div>
-                        <div class="input-container">
-                            <label class="input-label">Status</label>
-                            <input type="text" placeholder="Status" id="status" />
                         </div>
                         <div class="button-wrapper">
                             <input type="submit" value="Save" onClick="create_order()" id="submit" />

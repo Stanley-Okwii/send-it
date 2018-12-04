@@ -1,14 +1,12 @@
-changeDestination = () => {
-    event.preventDefault();
-    const url = 'https://sender-app.herokuapp.com/api/v1/parcels/destination';
+changeCurrentLocation = () => {
+    const url = 'https://sender-app.herokuapp.com/api/v1/parcels/status';
     const bearer = `Bearer ${sessionStorage.getItem('user_token')}`;
+    const currentLocation = document.getElementById('currentlocation').value;
     const orderId = document.getElementById('orderId').value;
-    const destination = document.getElementById('destination').value;
-
 
     const raw_data = {
         "id": orderId,
-        "destination": destination
+        "current_location": currentLocation
     }
 
     const request = {
@@ -24,12 +22,13 @@ changeDestination = () => {
         .then((response) => response.json())
         .then((data) => {
             message = data['message'];
-            if(message === 'parcel delivery destination has been changed'){
-                location.reload(true);
+            if (message === 'parcel delivery order has been updated') {
+                // location.reload(true);
             }
             console.log(message);
         })
         .catch(function (error) {
             console.log("Error: " + error);
         });
+
 }

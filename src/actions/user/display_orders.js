@@ -65,7 +65,7 @@ create_rows = (data) => {
         var current_location = document.createElement('div');
         current_location.innerHTML = order.current_location;
         current_location.setAttribute('class', 'col col-8');
-        current_location.setAttribute('data-label', 'Currenlocation');
+        current_location.setAttribute('data-label', 'Currentlocation');
 
         var status = document.createElement('div');
         status.innerHTML = order.status;

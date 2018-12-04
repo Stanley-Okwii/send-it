@@ -18,7 +18,8 @@ closeModal = () => {
     document.getElementById("weight").readOnly = false;
     document.getElementById("recipient").readOnly = false;
     document.getElementById("pickuplocation").readOnly = false;
-    document.getElementsByClassName("modal-body")[0].firstElementChild.reset()
+    document.getElementsByClassName("modal-body")[0].firstElementChild.reset();
+
     modal.style.display = "none";
 }
 

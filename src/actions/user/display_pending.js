@@ -25,9 +25,14 @@ showPendingOrders = () => {
 create_rows = (data) => {
     const token = window.sessionStorage.getItem('user_token');
     const userIdentity = JSON.parse(atob(token.split('.')[1]));
-    const role = userIdentity['identity']['role']
-    return data.
-    filter((order) => order.status === 'pending').
+    const role = userIdentity['identity']['role'];
+
+    const pendingOrders = data.filter((order) => order.status === 'pending');
+    sessionStorage.setItem('pending', pendingOrders.length);
+    const deliveredOrders = data.filter((order) => order.status === 'delivered');
+    sessionStorage.setItem('delivered', deliveredOrders.length);
+
+    return pendingOrders.
     map((order) => {
         var element = document.createElement('li');
         element.className = "table-row";

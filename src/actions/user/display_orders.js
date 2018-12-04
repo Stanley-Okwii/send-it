@@ -23,6 +23,11 @@ show_orders = () => {
 }
 
 create_rows = (data) => {
+    const pendingOrders = data.filter((order) => order.status === 'pending');
+    sessionStorage.setItem('pending', pendingOrders.length);
+    const deliveredOrders = data.filter((order) => order.status === 'delivered');
+    sessionStorage.setItem('delivered', deliveredOrders.length);
+
     return data.
     map((order) => {
         var element = document.createElement('li');

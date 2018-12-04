@@ -88,10 +88,19 @@ showPending = () => {
 }
 
 showProfile = () => {
+    token = sessionStorage.getItem("user_token");
+    userIdentity = JSON.parse(atob(token.split('.')[1]));
+    name = userIdentity['identity']['name']
+    var user_name = document.getElementsByTagName('b')[0];
+    var delivered = document.getElementsByClassName("container")[0].children[1];
+    var pending = document.getElementsByClassName("container")[0].children[3];
     var profileCard = document.getElementsByClassName("side-panel")[0];
     var bodyWrapper = document.getElementsByClassName("home-container")[0];
     if(profileCard.style.display === "none" || profileCard.style.display === ""){
         profileCard.style.display = "block";
+        user_name.innerText = name;
+        delivered.innerText = `Delivered orders: ${sessionStorage.getItem('delivered')} `;
+        pending.innerText = `Pending orders: ${sessionStorage.getItem('pending')} `
         bodyWrapper.style.marginLeft = "0px";
     } else {
         profileCard.style.display = "none";

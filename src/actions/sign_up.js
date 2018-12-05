@@ -2,6 +2,7 @@ registerUser = () => {
     event.preventDefault();
     const url = 'https://sender-app.herokuapp.com/api/v1/user';
     errorHandle = document.getElementById("error_handle_sign_up");
+    var modal = document.getElementById('myModal');
 
     if (document.getElementById("registerEmail")
         && document.getElementById("registerPassword1")
@@ -30,7 +31,9 @@ registerUser = () => {
                 .then((data) => {
                     message = data["message"];
                     if (message === "successfully created new account") {
-                        console.log(message)
+                        modal.lastChild.innerHTML = message;
+                        modal.style.display = (modal.style.display === "block") ? "none" : "block";
+                        console.log(message);
                     } else {
                         errorHandle.innerHTML = message;
                     }
@@ -38,6 +41,7 @@ registerUser = () => {
                 .catch(function (error) {
                     console.log("Error: " + error);
                 });
+            modal.style.display = (modal.style.display === "block") ? "none" : "block";
         } else {
             errorHandle.innerHTML = "passwords don't match";
         }

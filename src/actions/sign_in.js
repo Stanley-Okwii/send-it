@@ -1,3 +1,8 @@
+function overlay() {
+    var modal = document.getElementById('myModal');
+    modal.style.display = (modal.style.display === "block") ? "none" : "block";
+}
+
 signIn = () => {
     event.preventDefault();
     const url = 'https://sender-app.herokuapp.com/api/v1/auth/signin';
@@ -25,6 +30,7 @@ signIn = () => {
             .then((data) => {
                 message = data["message"];
                 if (message === "You have logged in successfully.") {
+                    overlay();
                     token = data["user_token"]
                     window.sessionStorage.setItem("user_token", token);
                     UserIdentity = JSON.parse(atob(token.split('.')[1]));
@@ -34,6 +40,7 @@ signIn = () => {
                     } else {
                         window.location.href = "src/components/home_page.html";
                     }
+                    overlay();
                 } else {
                     errorHandle = document.getElementById("error_handle");
                     errorHandle.style.display = 'block';

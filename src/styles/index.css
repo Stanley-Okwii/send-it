@@ -139,6 +139,11 @@ input[type=submit] {
   color: white;
 }
 
+input[type=submit]:active {
+  border: 1px solid #49708f;
+  background-color: #49708f;
+}
+
 #tab-label1 {
   border-top-left-radius: 10px;
 }
@@ -149,4 +154,29 @@ input[type=submit] {
 
 #error_handle, #error_handle_sign_up {
   color: red;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  margin: auto;
+  width: 100%;
+  overflow: auto;
+}
+
+.modal-content {
+  opacity: 0.8;
+  background-color: green;
+  margin: auto;
+  border: 1px solid #888;
+  width: 50%;
+  border-radius: 14px;
+  color: white;
+}
+
+.modal-content > p {
+  text-align: -webkit-center;
 }

@@ -180,3 +180,11 @@ input[type=submit]:active {
 .modal-content > p {
   text-align: -webkit-center;
 }
+
+.login_div, .signup_div {
+  display:-webkit-box;
+}
+
+div > .fa-spinner {
+  padding: 7px;
+}

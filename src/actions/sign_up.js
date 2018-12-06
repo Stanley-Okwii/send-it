@@ -3,6 +3,7 @@ registerUser = () => {
     const url = 'https://sender-app.herokuapp.com/api/v1/user';
     errorHandle = document.getElementById("error_handle_sign_up");
     var modal = document.getElementById('myModal');
+    var signInTab = document.getElementById('tab1');
 
     if (document.getElementById("registerEmail")
         && document.getElementById("registerPassword1")
@@ -26,24 +27,33 @@ registerUser = () => {
                 },
             }
 
+            const isLoading = document.createElement('i');
+            isLoading.setAttribute('class', "fa fa-spinner fa-pulse fa-2x fa-fw");
+            var isLoadingNode =  document.getElementsByClassName('signup_div')[0];
+            isLoadingNode.appendChild(isLoading);
             fetch(url, request)
                 .then((response) => response.json())
                 .then((data) => {
                     message = data["message"];
-                    if (message === "successfully created new account") {
-                        modal.lastChild.innerHTML = message;
-                        modal.style.display = (modal.style.display === "block") ? "none" : "block";
-                        console.log(message);
+                    if (message === "successfully created a new account") {
+                        signInTab.checked = true;
+                        modal.lastElementChild.lastElementChild.innerText = message + ". Go ahead and log in! ";
+                        setTimeout(() => {
+                            modal.style.display = (modal.style.display === "block") ? "none" : "block";
+                            isLoadingNode.removeChild(isLoading);
+                            console.log(message);
+                        }, 300);
                     } else {
                         errorHandle.innerHTML = message;
+                        isLoadingNode.removeChild(isLoading);
                     }
                 })
                 .catch(function (error) {
                     console.log("Error: " + error);
                 });
-            modal.style.display = (modal.style.display === "block") ? "none" : "block";
         } else {
             errorHandle.innerHTML = "passwords don't match";
+            isLoadingNode.removeChild(isLoading);
         }
     }
 }

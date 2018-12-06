@@ -1,6 +1,6 @@
 deleteUser = (event) => {
     const url = 'https://sender-app.herokuapp.com/api/v1/user';
-    bearer = `Bearer ${sessionStorage.getItem('user_token')}`;
+    const bearer = `Bearer ${sessionStorage.getItem('user_token')}`;
     const value = event.currentTarget.parentNode.childNodes[1];
     let email ='';
     if(value){
@@ -24,8 +24,8 @@ deleteUser = (event) => {
         .then((response) => response.json())
         .then((data) => {
             message = data['message'];
-            if(message === 'user account has been deleted'){
-                Window.location.reload(true);
+            if(message === 'user account deleted'){
+                location.reload(true);
             }
             console.log(message);
         })

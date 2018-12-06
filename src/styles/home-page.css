@@ -12,9 +12,11 @@ body, html {
     margin: 0;
     padding: 0;
   }
+
   .navigation li {
     display: inline-block;
   }
+
   .navigation a {
     background: #395870;
     background: linear-gradient(#49708f, #293f50);
@@ -23,13 +25,16 @@ body, html {
     padding: 12px 20px;
     text-decoration: none;
   }
+
   .navigation a:hover {
     background: #314b60;
     box-shadow: inset 0 0 10px 1px rgba(0, 0, 0, .3);
   }
+
   .navigation li:first-child a {
     border-radius: 4px 0 0 4px;
   }
+
   .navigation li:last-child a {
     border-right: 0;
     border-radius: 0 4px 4px 0;
@@ -95,13 +100,14 @@ h2 {
   text-align: center;
 }
 
-  .table-header, .table-row, .table-row {
+.table-header, .table-row, .table-row {
     border-radius: 2px;
     padding: 7px 30px;
     display: flex;
     margin-bottom: 16px;
   }
-  .table-header {
+
+.table-header {
     background-color: #95A5A6;
     font-size: 14px;
     text-transform: uppercase;
@@ -179,7 +185,6 @@ h2 {
     cursor: pointer;
   }
 
-  
   @media all and (max-width: 767px) {
     .table-header {
       display: none;
@@ -210,22 +215,22 @@ button {
   background-color: #fff;
   border-color: #ccc;
   display: inline-block;
-    padding: 6px 12px;
-    margin-bottom: 0;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.42857143;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    background-image: none;
-    border: 1px solid transparent;
-    border-radius: 4px;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
 }
 
 .deliveries {
@@ -266,7 +271,11 @@ input[type=text], input[type=email], input[type=password] , input[type=number]{
   color: black;
 }
 
-input[type=text]:focus, input[type=password]:focus, input[type=number]:focus, input[type=email]:focus #password-visible:focus {
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=number]:focus,
+input[type=email]:focus,
+#password-visible:focus {
     border: none;
     border-bottom: 1px solid #008CBA;
 }
@@ -316,4 +325,25 @@ input[type=button] {
 
 .col.col-11 > i {
   color: blue;
+}
+
+#view-delivered:active,
+#create-delivery:active,
+#view-all:active,
+#view-pending:active {
+  background-color: #333;
+  color: #fff;
+}
+
+.make_admin:active, .demote:active, .delete:active {
+  background: #334;
+}
+
+.no-pending.table-row {
+text-indent: 45%;
+}
+
+input[type=submit]:active {
+  border: 1px solid #49708f;
+  background-color: #49708f;
 }

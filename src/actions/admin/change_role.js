@@ -26,8 +26,8 @@ demote = (event) => {
         .then((response) => response.json())
         .then((data) => {
             message = data['message'];
-            if(message === 'user role has been changed'){
-                Window.location.reload(true);
+            if(message === 'user role changed to user'){
+                location.reload(true);
             }
             console.log(message);
         })
@@ -60,8 +60,8 @@ makeAdmin = (event) => {
         .then((response) => response.json())
         .then((data) => {
             message = data['message'];
-            if(message === 'user role has been changed'){
-                Window.location.reload(true);
+            if(message === 'user role changed to admin'){
+                location.reload(true);
             }
             console.log(message);
         })

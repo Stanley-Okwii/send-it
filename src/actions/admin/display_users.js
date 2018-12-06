@@ -47,12 +47,12 @@ create_rows = (data) => {
             if (user.role === 'user') {
                 ButtonNode.innerHTML = 'Make admin';
                 ButtonNode.setAttribute('class', 'make_admin');
-                ButtonNode.setAttribute('onClick', 'makeAdmin(event)');
+                ButtonNode.setAttribute('onClick', 'changeRole(event)');
             }
             else {
                 ButtonNode.innerHTML = 'Demote';
                 ButtonNode.setAttribute('class', 'demote');
-                ButtonNode.setAttribute('onClick', 'demote(event)');
+                ButtonNode.setAttribute('onClick', 'changeRole(event)');
             }
             permissionDiv.appendChild(ButtonNode);
 

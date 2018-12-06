@@ -47,7 +47,7 @@ signIn = () => {
                         } else {
                             window.location.href = "src/components/home_page.html";
                         }
-                        isLoadingNode.removeChild(isLoading)
+                        isLoadingNode.removeChild(isLoading);
                     }, 300);
 
                 } else {

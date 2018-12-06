@@ -34,17 +34,22 @@ create_order = () => {
             },
         }
 
+        const isLoading = document.createElement('i');
+        isLoading.setAttribute('class', "fa fa-spinner fa-pulse fa-2x fa-fw");
+        var isLoadingNode = document.getElementsByClassName('button-wrapper')[0];
+        isLoadingNode.appendChild(isLoading);
         fetch(url, request)
             .then((response) => response.json())
             .then((data) => {
                 message = data["message"];
                 if (message === "parcel delivery order successfully created") {
-                    console.log(message);
                     document.getElementById('myModal').style.display = "none";
                     document.getElementsByClassName("modal-body")[0].firstElementChild.reset();
+                    console.log(message);
                 } else {
                     errorHandle.innerHTML = message;
                 }
+                isLoadingNode.removeChild(isLoading)
             })
             .catch(function (error) {
                 console.log("Error: " + error);

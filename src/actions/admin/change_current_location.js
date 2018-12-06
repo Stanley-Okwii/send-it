@@ -5,8 +5,8 @@ changeCurrentLocation = () => {
     const orderId = document.getElementById('orderId').value;
 
     const raw_data = {
-        "id": orderId,
-        "current_location": currentLocation
+        "current_location": currentLocation,
+        "id": orderId
     }
 
     const request = {
@@ -21,14 +21,13 @@ changeCurrentLocation = () => {
     fetch(url, request)
         .then((response) => response.json())
         .then((data) => {
-            message = data['message'];
+            const message = data['message'];
             if (message === 'parcel delivery order has been updated') {
-                // location.reload(true);
+                location.reload(true);
             }
             console.log(message);
         })
         .catch(function (error) {
             console.log("Error: " + error);
         });
-
 }

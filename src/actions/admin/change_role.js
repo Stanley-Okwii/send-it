@@ -1,16 +1,17 @@
 const url = 'https://sender-app.herokuapp.com/api/v1/role';
 const bearer = `Bearer ${sessionStorage.getItem('user_token')}`;
-let email ='';
+let email, role = '';
 
-demote = (event) => {
-    const value = event.currentTarget.parentNode.parentNode.childNodes[1];
-    if(value){
-        email = value.innerText;
+changeRole = (event) => {
+    const value = event.currentTarget.parentNode.parentNode;
+    if (value) {
+        email = value.childNodes[1].innerText;
+        role = value.childNodes[2].innerText === "user" ? "admin" : "user";
     }
 
     const raw_data = {
         "email": email,
-        "role": "user"
+        "role": role
     }
 
     const request = {
@@ -26,7 +27,7 @@ demote = (event) => {
         .then((response) => response.json())
         .then((data) => {
             message = data['message'];
-            if(message === 'user role changed to user'){
+            if (message === `user role changed to ${role}`) {
                 location.reload(true);
             }
             console.log(message);
@@ -35,38 +36,3 @@ demote = (event) => {
             console.log("Error: " + error);
         });
 }
-
-makeAdmin = (event) => {
-    const value = event.currentTarget.parentNode.parentNode.childNodes[1];
-    if(value){
-        email = value.innerText;
-    }
-
-    const raw_data = {
-        "email": email,
-        "role": "admin"
-    }
-
-    const request = {
-        method: 'PUT',
-        body: JSON.stringify(raw_data),
-        headers: {
-            "Authorization": bearer,
-            "Content-Type": "application/json"
-        },
-    }
-
-    fetch(url, request)
-        .then((response) => response.json())
-        .then((data) => {
-            message = data['message'];
-            if(message === 'user role changed to admin'){
-                location.reload(true);
-            }
-            console.log(message);
-        })
-        .catch(function (error) {
-            console.log("Error: " + error);
-        });
-}
-

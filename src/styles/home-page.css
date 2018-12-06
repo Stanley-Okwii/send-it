@@ -305,7 +305,7 @@ input[type=button] {
 }
 
 .button-wrapper {
-  display: inline-flex;
+  display:-webkit-box;
 }
 
 #handle_order_error {
@@ -323,8 +323,17 @@ input[type=button] {
   display: -webkit-flex;
 }
 
-.col.col-11 > i {
+.col.col-11{
   color: blue;
+}
+
+.col.col-11 > .fa.fa-times-circle-o {
+  color: red;
+}
+
+input[type=button]:active {
+  background-color: grey;
+  color: white;
 }
 
 #view-delivered:active,

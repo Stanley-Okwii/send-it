@@ -1,5 +1,6 @@
 
 showPendingOrders = () => {
+    event.preventDefault();
     var parentNode = document.getElementsByClassName("deliveries")[0];
     const url = 'https://sender-app.herokuapp.com/api/v1/parcels';
     bearer = `Bearer ${sessionStorage.getItem('user_token')}`;

@@ -1,5 +1,5 @@
 changeCurrentLocation = () => {
-    const url = 'https://sender-app.herokuapp.com/api/v1/parcels/status';
+    const url = 'https://sender-app.herokuapp.com/api/v1/parcels/current_location';
     const bearer = `Bearer ${sessionStorage.getItem('user_token')}`;
     const currentLocation = document.getElementById('currentlocation').value;
     const orderId = document.getElementById('orderId').value;
@@ -22,7 +22,7 @@ changeCurrentLocation = () => {
         .then((response) => response.json())
         .then((data) => {
             const message = data['message'];
-            if (message === 'parcel delivery order has been updated') {
+            if (message === 'current location has been updated') {
                 location.reload(true);
             }
             console.log(message);

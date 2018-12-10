@@ -5,10 +5,9 @@ showModal = () => {
     modal = document.getElementById('myModal');
     document.getElementById("submit").setAttribute("onClick","create_order()");
     document.getElementById("currentlocation").parentElement.style.display = 'none';
-    document.getElementById("orderId").parentElement.style.display = 'none';
-    // document.getElementById("recipient").parentElement.style.display = 'block';
-    // document.getElementById("weight").parentElement.style.display = 'block';
-    // document.getElementById("price").parentElement.style.display = 'block';
+    if(document.getElementById("orderId")){
+        document.getElementById("orderId").parentElement.style.display = 'none';
+    }
     modal.style.display = "block";
 }
 

@@ -23,8 +23,19 @@ showDeliveredOrders = () => {
 }
 
 create_rows = (data) => {
-    return data.
-    filter((order) => order.status === 'delivered').
+    const deliveredOrders = data.filter((order) => order.status === 'delivered');
+    sessionStorage.setItem('delivered', deliveredOrders.length);
+
+    if(deliveredOrders.length === 0){
+        var parentNode = document.getElementsByClassName("deliveries")[0];
+        var element = document.createElement('li');
+        element.className = "no-pending table-row";
+        element.innerText = "No delivered orders";
+        parentNode.appendChild(element)
+        console.log("No delivered orders");
+    }
+
+    return deliveredOrders.
     map((order) => {
         var element = document.createElement('li');
         element.className = "table-row";

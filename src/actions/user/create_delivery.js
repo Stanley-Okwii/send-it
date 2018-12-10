@@ -45,6 +45,7 @@ create_order = () => {
                 if (message === "parcel delivery order successfully created") {
                     document.getElementById('myModal').style.display = "none";
                     document.getElementsByClassName("modal-body")[0].firstElementChild.reset();
+                    location.reload(true);
                     console.log(message);
                 } else {
                     errorHandle.innerHTML = message;

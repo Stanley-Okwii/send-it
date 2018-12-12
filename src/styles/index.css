@@ -15,7 +15,7 @@ body, html {
     padding-top: 4%;
     max-width: 600px;
     margin: auto;
-    background-image: url(../../assets/package.jpg);
+    background-image: url(../../assets/package-blur.jpg);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;

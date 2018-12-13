@@ -40,6 +40,16 @@ body, html {
   vertical-align: middle;
 }
 
+@media only screen and (max-width: 599px) {
+  .form_wrapper > #tab-label1 {
+    width: 46%;
+  }
+
+  .form_wrapper > #tab-label2 {
+    width: 46%;
+  }
+}
+
 section {
   display: none;
   padding: 20px 0 0;

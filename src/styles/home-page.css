@@ -82,7 +82,7 @@ body, html {
   padding-top: 3%;
   flex-direction: column;
   align-items: center;
-  margin-left: 200px;
+  /* margin-left: 200px; */
 }
 
 .modal-header {
@@ -176,6 +176,7 @@ h2 {
     color: green;
     text-align: center;
   }
+
   .col-11 {
     flex-basis: 5%;
     color: red;
@@ -185,28 +186,44 @@ h2 {
     cursor: pointer;
   }
 
-  @media all and (max-width: 767px) {
+  @media only screen and (max-width: 599px) {
     .table-header {
       display: none;
     }
     li {
       display: block;
     }
+    .home-container {
+      padding-top: 5% !important;
+    }
     .col {
-      
       flex-basis: 100%;
-      
     }
-    .col {
-      display: flex;
-      padding: 10px 0;
+    .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9 {
+      width: 100%;
+      text-align: left;
     }
-    .col:before {
-      color: #6C7A89;
-      padding-right: 10px;
-      content: attr(data-label);
-      flex-basis: 50%;
-      text-align: right;
+    .col-10 {
+      padding-top: 10px;
+      text-align: -webkit-left !important;
+    }
+    .col-11 {
+      margin-top: -20px;
+    }
+    .table-row {
+      display: flow-root;
+    }
+    .col-1:before,
+    .col-2:before,
+    .col-3:before,
+    .col-4:before,
+    .col-5:before,
+    .col-6:before,
+    .col-7:before,
+    .col-8:before,
+    .col-9:before {
+      content: attr(data-label)": ";
+      padding-right: 5%;
     }
   }
 
@@ -216,7 +233,7 @@ button {
   border-color: #ccc;
   display: inline-block;
   padding: 6px 12px;
-  margin-bottom: 0;
+  margin-bottom: 3px;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.42857143;
@@ -234,7 +251,7 @@ button {
 }
 
 .deliveries {
-  width: 900px;
+  width: 100%
 }
 
 .side-panel {

@@ -106,3 +106,17 @@ showProfile = () => {
         bodyWrapper.style.margin = "20px 5% 0% 5%";
     }
 }
+
+handleSearch = (event) => {
+    var value = event.target.value;
+    var nodes = document.getElementsByClassName('col-1')
+    for(var i = 1; i < nodes.length; i++){
+        if(nodes[i].innerText !== value){
+            nodes[i].parentElement.style.display = 'none';
+        }
+        if(value.length === 0){
+            nodes[i].parentElement.style.display = 'flex';
+        }
+    }
+}
+

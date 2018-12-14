@@ -39,6 +39,11 @@
                 <button id="view-delivered" onClick="showPending()">View Pending</button>
                 <button id="view-delivered" onClick="showDelivered()">View Delivered</button>
                 <button id="view-all" onClick="showAllOrders()">View all</button>
+                <div class="search_box">
+                    <input oninput="handleSearch(event);" type="search" id="mySearch" name="q"
+                    placeholder="Search by order number">
+                    <i class="fa fa-search"></i>
+                </div>
             </li>
             <div class="scroller">
             <ul class="deliveries">

@@ -100,9 +100,9 @@ showProfile = () => {
         user_name.innerText = name;
         delivered.innerText = `Delivered orders: ${sessionStorage.getItem('delivered')} `;
         pending.innerText = `Pending orders: ${sessionStorage.getItem('pending')} `
-        // bodyWrapper.style.marginLeft = "0px";
+        bodyWrapper.style.margin = "-299px 5% 0% 5%";
     } else {
         profileCard.style.display = "none";
-        // bodyWrapper.style.marginLeft = "200px";
+        bodyWrapper.style.margin = "20px 5% 0% 5%";
     }
 }

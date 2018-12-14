@@ -14,7 +14,7 @@ body, html {
   }
 
   .navigation li {
-    display: inline-block;
+    display: -webkit-inline-box;
   }
 
   .navigation a {
@@ -43,7 +43,7 @@ body, html {
 .modal {
     display: none; 
     position: fixed; 
-    z-index: 1; 
+    z-index: 20; 
     left: 0;
     top: 0;
     width: 100%; 
@@ -78,11 +78,14 @@ body, html {
 }
 
 .home-container {
-  display: -webkit-box;
+  /* display: -webkit-box;
   padding-top: 3%;
   flex-direction: column;
   align-items: center;
+  margin: 0 auto; */
   /* margin-left: 200px; */
+  /* margin: -297px 50px 0px 50px; */
+  margin: 20px 5% 0% 5%;
 }
 
 .modal-header {
@@ -225,6 +228,15 @@ h2 {
       content: attr(data-label)": ";
       padding-right: 5%;
     }
+    .navigation ul {
+      display: flow-root !important;
+    }
+  
+    .navigation li {
+      display: flex !important;
+      padding-bottom: 5px;
+    }
+  
   }
 
 button {
@@ -257,8 +269,9 @@ button {
 .side-panel {
   display: none;
   width: 200px;
-  margin-top: 26px;
-  position: inherit;
+  position: relative;
+  margin: 20px 0px 0px 0px;
+  z-index: 10;
 }
 
 .card {
@@ -333,11 +346,8 @@ input[type=button] {
   border: none;
   padding: 5px;
   overflow-y: scroll;
-  height: 450px;
-}
-
-.body-wrapper{
-  display: -webkit-flex;
+  height: 500px;
+  overflow-x: hidden;
 }
 
 .col.col-11{

@@ -70,7 +70,7 @@ create_rows = (data) => {
             element.appendChild(email);
             element.appendChild(role);
             element.appendChild(permissionDiv);
-            element.appendChild(Delete);
+            element.appendChild(DeleteDiv);
 
             return element;
         }

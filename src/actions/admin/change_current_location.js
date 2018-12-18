@@ -1,6 +1,6 @@
 changeCurrentLocation = () => {
     event.preventDefault();
-    const url = 'https://sender-app.herokuapp.com/api/v1/parcel/current_location';
+    const url = 'https://sender-app.herokuapp.com/api/v1/parcels/current_location';
     const bearer = `Bearer ${sessionStorage.getItem('user_token')}`;
     if (document.getElementById('currentlocation') &&
         document.getElementById('orderId')) {

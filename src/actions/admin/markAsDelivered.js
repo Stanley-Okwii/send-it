@@ -4,7 +4,7 @@ markDelivered = (event) => {
     const value = event.currentTarget.parentNode;
     let orderId ='';
     if(value){
-        orderId = value.children[0].innerText;
+        orderId = value.children[1].innerText;
     }
 
     const raw_data = {

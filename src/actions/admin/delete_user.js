@@ -1,7 +1,7 @@
 deleteUser = (event) => {
     const url = 'https://sender-app.herokuapp.com/api/v1/user';
     const bearer = `Bearer ${sessionStorage.getItem('user_token')}`;
-    const value = event.currentTarget.parentNode.childNodes[1];
+    const value = event.currentTarget.parentNode.parentNode.childNodes[1];
     let email ='';
     if(value){
         email = value.innerText;

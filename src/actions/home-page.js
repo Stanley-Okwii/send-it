@@ -59,14 +59,14 @@ editDelivery = (event) => {
     price.readOnly = true;
     if(value){
         modalHeader.innerText = "Change destination";
-        orderNode.value = value.children[0].innerText;
-        parcel.value = value.children[1].innerText;
-        weight.value = value.children[2].innerText;
-        recipient.value = value.children[4].innerText;
-        pickuplocation.value = value.children[5].innerText;
-        destination.value = value.children[6].innerText;
-        price.value = value.children[3].innerText;
-        currentlocation.value =  value.children[7].innerText;
+        orderNode.value = value.children[1].innerText;
+        parcel.value = value.children[2].innerText;
+        weight.value = value.children[3].innerText;
+        recipient.value = value.children[5].innerText;
+        pickuplocation.value = value.children[6].innerText;
+        destination.value = value.children[7].innerText;
+        price.value = value.children[4].innerText;
+        currentlocation.value =  value.children[8].innerText;
         showModal();
         orderNode.parentElement.style.display = 'block';
         document.getElementById("submit").setAttribute("onClick","changeDestination()");

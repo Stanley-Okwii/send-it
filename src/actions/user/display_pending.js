@@ -48,6 +48,11 @@ create_rows = (data) => {
             var element = document.createElement('li');
             element.className = "table-row";
 
+            var date = document.createElement('div');
+            date.innerHTML = order.created_at;
+            date.setAttribute('class', 'col col-0');
+            date.setAttribute('data-label', 'Date');
+
             var no = document.createElement('div');
             no.innerHTML = order.order_id;
             no.setAttribute('class', 'col col-1');
@@ -115,6 +120,7 @@ create_rows = (data) => {
                 cancel.setAttribute('class', 'col col-11');
             }
 
+            element.appendChild(date);
             element.appendChild(no);
             element.appendChild(parcel);
             element.appendChild(weight);

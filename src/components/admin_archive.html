@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SendIT</title>
+    <link rel="icon" href="../../assets/title.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/home-page.css" type="text/css">
+    <script src="../actions/home-page.js"></script>
+    <script src="../actions/user/create_delivery.js"></script>
+    <script src="../actions/admin_home.js"></script>
+    <script src="../actions/admin/display_archived_orders.js"></script>
+    <script src="../actions/user/display_orders.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        type="text/css">
+</head>
+
+<body onload="showArchivedOrders()">
+    <nav class="navigation">
+        <ul>
+            <li><a href="admin_home.html"><i class="fa fa-home"></i>Home</a></li>
+            <li><a href="#" onClick="showProfile()"><i class="fa fa-user"></i>Profile</a></li>
+            <li><a href="admin_manage_users.html"><i class="fa fa-users"></i>Users</a></li>
+            <li><a href="../../index.html"><i class="fa fa-sign-out"></i>Logout</a></li>
+        </ul>
+    </nav>
+    <div class="body-wrapper">
+    <aside class="side-panel">
+        <div class="card">
+            <img src="../../assets/avatar.png" alt="Avatar" style="width: 70%">
+            <div class="container">
+                <h4><b>Admin here</b></h4>
+                <div>Delivered orders: 8</div>
+                <br />
+                <div>Pending orders: 3 </div>
+            </div>
+        </div>
+    </aside>
+    <div class="home-container">
+        <div class="deliveries-container">
+            <li class="table-header-top">
+                <button id="create-delivery" onClick="showModal()"><i class="fa fa-plus"></i> &nbsp;Add delivery</button>
+                <button id="view-delivered" onClick="navigateToPendingOrders()">View Pending</button>
+                <button id="view-delivered" onClick="navigateToDeliveredOrders()">View Delivered</button>
+                <button id="view-all" onClick="navigateToAllOrders()">View all</button>
+                <div class="search_box">
+                    <input oninput="handleSearch(event);" type="search" id="mySearch" name="q"
+                    placeholder="Search by order number">
+                    <i class="fa fa-search"></i>
+                </div>
+            </li>
+            <div class="scroller">
+            <ul class="deliveries">
+                <li class="table-header-extend">
+                    <span class="table-title">All parcel orders</span>
+                </li>
+                <li class="table-header">
+                    <div class="col col-0">Date</div>
+                    <div class="col col-1">No</div>
+                    <div class="col col-2">Parcel </div>
+                    <div class="col col-3">Weight (kgs)</div>
+                    <div class="col col-4">Price (UGX)</div>
+                    <div class="col col-5">Recipient</div>
+                    <div class="col col-6">Pickup location</div>
+                    <div class="col col-7">Destination</div>
+                    <div class="col col-8">Current location</div>
+                    <div class="col col-9">Status</div>
+                </li>
+            </ul>
+            </div>
+        </div>
+        </div>
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close" onClick="closeModal()">&times;</span>
+                    <h3>Create a delivery parcel order </h3>
+                </div>
+                <section class="modal-body">
+                    <form onsubmit="closeModal()">
+                        <div class="input-container">
+                            <label class="input-label">Parcel Number</label>
+                            <input type="text" id="orderId" disabled readonly/>
+                        </div>
+                        <div class="input-container">
+                            <label class="input-label">Parcel item</label>
+                            <input type="text" id="item" placeholder="Item to deliver e.g Book" />
+                        </div>
+                        <div class="input-container">
+                            <label class="input-label">Weight (kg)</label>
+                            <input onChange="computePrice(event)" type="number" value="1" id="weight" />
+                        </div>
+                        <div class="input-container">
+                            <label class="input-label">Price (ugx)</label>
+                            <input type="number" placeholder="Estimate cost" id="price" readonly disabled />
+                        </div>
+                        <div class="input-container">
+                            <label class="input-label">Recipient</label>
+                            <input type="text" placeholder="Person to recieve the delivery" id="recipient" />
+                        </div>
+                        <div class="input-container">
+                            <label class="input-label">Pickup location</label>
+                            <input type="text" placeholder="Pickup location" id="pickuplocation" />
+                        </div>
+                        <div class="input-container">
+                            <label class="input-label">Destination</label>
+                            <input type="text" placeholder="Destination" id="destination" />
+                        </div>
+                        <div class="input-container">
+                            <label class="input-label">Current location</label>
+                            <input type="text" placeholder="Current location" id="currentlocation" />
+                        </div>
+                        <div class="input-container">
+                            <label class="input-label">Status</label>
+                            <input type="text" placeholder="Status" id="status" />
+                        </div>
+                        <div class="button-wrapper">
+                            <input type="submit" value="Save" onClick="create_order()" id="submit" />
+                            <input type="button" onClick="closeModal()" value="Cancel" id="Cancel" />
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

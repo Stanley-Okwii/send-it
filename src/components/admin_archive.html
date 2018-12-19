@@ -9,18 +9,18 @@
     <script src="../actions/home-page.js"></script>
     <script src="../actions/user/create_delivery.js"></script>
     <script src="../actions/admin_home.js"></script>
+    <script src="../actions/admin/display_archived_orders.js"></script>
     <script src="../actions/user/display_orders.js"></script>
-    <script src="../actions/user/display_delivered.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
         type="text/css">
 </head>
 
-<body onload="showDeliveredOrders()">
+<body onload="showArchivedOrders()">
     <nav class="navigation">
         <ul>
             <li><a href="admin_home.html"><i class="fa fa-home"></i>Home</a></li>
             <li><a href="#" onClick="showProfile()"><i class="fa fa-user"></i>Profile</a></li>
-            <li><a href="admin_manage_users.html" onClick="showUsers"><i class="fa fa-users"></i>Users</a></li>
+            <li><a href="admin_manage_users.html"><i class="fa fa-users"></i>Users</a></li>
             <li><a href="../../index.html"><i class="fa fa-sign-out"></i>Logout</a></li>
         </ul>
     </nav>
@@ -40,10 +40,9 @@
         <div class="deliveries-container">
             <li class="table-header-top">
                 <button id="create-delivery" onClick="showModal()"><i class="fa fa-plus"></i> &nbsp;Add delivery</button>
-                <button id="view-pending" onClick="navigateToPendingOrders()">View Pending</button>
+                <button id="view-delivered" onClick="navigateToPendingOrders()">View Pending</button>
                 <button id="view-delivered" onClick="navigateToDeliveredOrders()">View Delivered</button>
                 <button id="view-all" onClick="navigateToAllOrders()">View all</button>
-                <button id="view-archived" onClick="navigateArchivedOrders()">View Archived</button>
                 <div class="search_box">
                     <input oninput="handleSearch(event);" type="search" id="mySearch" name="q"
                     placeholder="Search by order number">
@@ -53,7 +52,7 @@
             <div class="scroller">
             <ul class="deliveries">
                 <li class="table-header-extend">
-                    <span class="table-title">Delivered parcel orders</span>
+                    <span class="table-title">All parcel orders</span>
                 </li>
                 <li class="table-header">
                     <div class="col col-0">Date</div>

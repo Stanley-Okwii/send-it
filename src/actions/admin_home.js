@@ -12,6 +12,9 @@ navigateToPendingOrders = () => {
     window.location.href = "../components/admin_home.html";
 }
 
+navigateArchivedOrders = () => {
+    window.location.href = "../components/admin_archive.html";
+}
 
 editDeliveryAdmin = (event) => {
     const value = event.currentTarget.parentNode;
